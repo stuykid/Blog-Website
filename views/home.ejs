@@ -1,0 +1,28 @@
+<!-- EJS Layouts/ partials -->
+<%-include("partials/header"); %> 
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+
+<% blogPosts.forEach(function(post){ %>
+    <div class="">
+        <h2> <%= post.title %>  </h2>
+        <p> <%= post.content.substring(0,100) + "..." %> 
+            <a href = "/posts/<%= post.title %>" > Read More </a> 
+        </p> 
+        
+    </div>
+    <% }); %>
+
+
+<%-include("partials/footer"); %>
+
+
+<!-- use forEach instead of for loop for an array -->
+
+<!-- <% for (let i = 0; i < blogPosts.length; i++){ %>
+    <div class="">
+        <h2> <%= blogPosts[i].title %>  </h2>
+        <p> <%= blogPosts[i].content %>  </p>
+    </div>
+<% } %> -->
